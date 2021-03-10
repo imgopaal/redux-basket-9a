@@ -1,0 +1,33 @@
+.basket-container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: auto;
+    width: 100%;
+}
+.titl{
+    font-family: Bebas Neue;
+    margin:30px auto;
+    font-size: 350%;
+}
+#payment{
+    color: white;
+    background-color: rgb(109, 0, 0);
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    margin: 55px auto;
+    text-align: center;
+    padding: 0px auto;
+    font-size: 40px;
+    font-family: Bebas Neue;
+    cursor: pointer;
+}
+#payment:hover{
+    box-shadow: 0px 2px 20px lightgray;
+    transition:1s;
+}
+/* #payment:focus{
+    border: none;
+    outline: none;
+} */

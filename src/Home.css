@@ -1,0 +1,32 @@
+body{
+    background-color: rgb(255, 255, 255);
+}
+
+.cc{
+    align-items: center;
+    text-align: center;
+    display: flex;
+    
+}
+.cont{
+    padding: 40px;
+    margin: auto;
+}.welcome{
+    margin: 80px auto;
+    text-align: center;
+    font-size: 600%;
+    color: rgb(109, 0, 0);
+    font-family: Bebas Neue;
+}
+#shop{
+    height: 50px;
+    width: 220px;
+    margin: 20px auto;
+    border: none;
+    background-color:rgb(109, 0, 0);
+    color: white;
+    font-size:28px;
+    cursor: pointer;
+    font-family: 'Bebas Neue', cursive;
+
+}
