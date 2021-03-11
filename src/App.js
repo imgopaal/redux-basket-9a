@@ -4,15 +4,24 @@ import Products from "./Products";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./Home";
 import { ProductDetails } from "./ProductDetails";
-import Basket from './Basket';
-import BottomNav from './BottomNav';
+import Basket from "./Basket";
+import BottomNav from "./BottomNav";
+import { useStateValue } from "./StateProvider";
 function App() {
+  const [{ basket }] = useStateValue();
   return (
     <Router>
       <nav>
-        <Link className="con" to="/">Home</Link>
-        <Link className="con" to="/products">Products</Link>
-        <Link className="con" to="/basket">Basket</Link>
+        <Link className="con" to="/">
+          Home
+        </Link>
+        <Link className="con" to="/products">
+          Products
+        </Link>
+        <Link className="con" to="/basket">
+          Basket ({basket?.length})
+        </Link>
+        <span></span>
       </nav>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -22,7 +31,7 @@ function App() {
           path="/products/product1"
           element={
             <ProductDetails
-              price={190} 
+              price={190}
               item={1}
               name={"Air Jordan 1 Retro HP Green"}
               src={
@@ -98,7 +107,7 @@ function App() {
         />
         <Route path="*" element={<NotFound />} />
       </Routes>
-      <BottomNav/>
+      <BottomNav />
     </Router>
   );
 }

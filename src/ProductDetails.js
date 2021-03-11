@@ -1,12 +1,9 @@
-import React from "react";
-// import Products from "./Products";
 import "./proDetail.css";
 
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
-
-// import Basket from './Basket';
+import { useStateValue } from "./StateProvider";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -32,12 +29,22 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
-function addToBasket(){
-  
-}
+
 export const ProductDetails = ({ src, item, name, price }) => {
+  const [,dispatch] = useStateValue();
+  const addToBasket = () => {
+    dispatch({
+      type: "ADD_TO_BASKET",
+      product: {
+        name: name,
+        price: price,
+        src: src,
+        item: item,
+      },
+    });
+  };
   const classes = useStyles();
-   return (
+  return (
     <div className="main">
       <div className={classes.root}>
         <Grid container spacing={3}>
@@ -62,7 +69,7 @@ export const ProductDetails = ({ src, item, name, price }) => {
             </Paper>
             <h4 className="price">
               ${price}
-              <button onClick={addToBasket()} className="basket-btn">
+              <button onClick={addToBasket} className="basket-btn">
                 Add To Basket{" "}
               </button>
             </h4>
